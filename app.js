@@ -25,5 +25,3 @@ app.listen(PORT, () => {
     logger.info(`${message} ${PORT}`)
 })
 
-
-const worker = require('./workers/image-worker')
