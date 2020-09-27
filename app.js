@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 const cropController = require('./controllers/crop-controller')
-app.post('/api/crop/', cropController)
+app.get('/api/crop/', cropController)
 
 const PORT = process.env.PORT || 4000
 const DEBUG = process.env.DEBUG || 1
