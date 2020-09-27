@@ -18,12 +18,14 @@ class CropService {
     }
 
     crop() {
+        logger.info(`Cropping ${this.cropUrl}`)
         return sharp(this.img)
             .resize({ width: this.width, height: this.height, fit: this.fit })
             .toBuffer()
     }
 
     async smartcrop() {
+        logger.info(`Smart cropping ${this.cropUrl}`)
         const cropPositions = await smartcrop.crop(this.img)
 
         const { x, y } = cropPositions.topCrop
