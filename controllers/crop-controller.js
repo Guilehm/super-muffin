@@ -5,7 +5,7 @@ const logger = require('../utils/logger')
 
 
 module.exports = async (req, res) => {
-    const { url, width, height, fit } = req.body
+    const { url, width, height, fit } = req.query
 
     let img
     try {
@@ -20,8 +20,8 @@ module.exports = async (req, res) => {
         return res.end(crop, 'binary')
     }
 
-    const handleCropError = err => {
-        logger.error(`Error while trying to crop ${this.cropUrl}. ${err.message}`)
+    const handleCropError = error => {
+        logger.error(`Error while trying to crop ${url}. ${error.message}`)
         return res.status(500).json({ error: error.message })
     }
 
