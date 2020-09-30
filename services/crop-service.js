@@ -17,13 +17,21 @@ class CropService {
         this.fit = VALID_FITS.includes(fit) ? fit : 'cover'
     }
 
-    crop() {
+    makeCrop() {
+        if (this.fit === 'smartcrop') {
+            return this._smartcrop()
+        } else {
+            return this._crop()
+        }
+    }
+
+    _crop() {
         return sharp(this.img)
             .resize({ width: this.width, height: this.height, fit: this.fit })
             .toBuffer()
     }
 
-    async smartcrop() {
+    async _smartcrop() {
         const cropPositions = await smartcrop.crop(this.img)
 
         const { x, y } = cropPositions.topCrop
