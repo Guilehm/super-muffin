@@ -26,14 +26,7 @@ module.exports = async (req, res) => {
     }
 
     const service = new CropService(url, img, width, height, fit)
-    if (fit === 'smartcrop') {
-        service.smartcrop()
-            .then(handleCropSuccess)
-            .catch(handleCropError)
-    } else {
-        service.crop()
-            .then(handleCropSuccess)
-            .catch(handleCropError)
-    }
-
+    service.makeCrop()
+        .then(handleCropSuccess)
+        .catch(handleCropError)
 }
