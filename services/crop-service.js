@@ -1,8 +1,6 @@
 const sharp = require('sharp')
 const smartcrop = require('smartcrop-gm')
 
-const logger = require('../utils/logger')
-
 
 const VALID_FITS = ['cover', 'contain', 'fill', 'inside', 'outside']
 
