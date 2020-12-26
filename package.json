@@ -13,7 +13,7 @@
     "smartcrop-gm": "^2.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.6"
   },
   "scripts": {
     "start": "yarn && node app.js"
