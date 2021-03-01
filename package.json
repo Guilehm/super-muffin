@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "amqplib": "^0.6.0",
+    "amqplib": "^0.7.0",
     "axios": "^0.21.0",
     "express": "^4.17.1",
     "helmet": "^4.2.0",
